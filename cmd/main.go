@@ -1,22 +1,22 @@
 package main
 
 import (
-    "flag"
-    "log"
+	"flag"
+	"log"
 
-    "github.com/demyforge/category-service/internal/app"
-    "github.com/demyforge/category-service/internal/config"
+	"github.com/demyforge/category-service/internal/app"
+	"github.com/demyforge/category-service/internal/config"
 )
 
 func main() {
-    configPath := flag.String("config", "configs/stub.toml", "path to config file")
-    flag.Parse()
+	configPath := flag.String("config", "configs/stub.toml", "path to config file")
+	flag.Parse()
 
-    conf, err := config.Load(*configPath)
-    if err != nil {
-        log.Fatal(err)
-    }
+	conf, err := config.Load(*configPath)
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    a := app.New()
-    log.Fatal(a.Listen(conf.ListenAddr))
+	a := app.New(conf.DSN())
+	log.Fatal(a.Listen(conf.ListenAddr))
 }

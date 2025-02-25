@@ -1,1 +1,7 @@
 ListenAddr = ":8080"
+
+[postgres]
+Host = "localhost:5432"
+Database = "test"
+Username = "root"
+Password = "root"
