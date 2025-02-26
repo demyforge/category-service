@@ -7,5 +7,8 @@ import (
 
 func InitRoutes(app fiber.Router, h *handlers.Handler) {
 	app.Post("/category", h.CreateCategory)
+	app.Get("/category/:id", h.GetCategoryById)
 	app.Get("/category", h.GetAllCategories)
+	app.Put("/category", h.UpdateCategory)
+	app.Delete("/category/:id", h.DeleteCategory)
 }
