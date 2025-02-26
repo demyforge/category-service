@@ -4,7 +4,7 @@
 CONFIG_FILE="configs/stub.toml"
 
 if ! command -v yq &> /dev/null; then
-    echo "Error: 'yq' is required. Install it with 'brew install yq' (macOS) або 'sudo apt install yq' (Linux)."
+    echo "Error: 'yq' is required. Install it with 'brew install yq' (macOS) or 'sudo apt install yq' (Linux)."
     exit 1
 fi
 
