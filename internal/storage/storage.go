@@ -6,7 +6,7 @@ import (
 	"errors"
 
 	"github.com/demyforge/category-service/internal/domain/models"
-	"github.com/demyforge/category-service/pkg/database/postgres"
+	"github.com/demyforge/utils/database/postgres"
 	"github.com/google/uuid"
 	"github.com/jmoiron/sqlx"
 )

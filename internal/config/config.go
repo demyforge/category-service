@@ -3,7 +3,7 @@ package config
 import (
 	"fmt"
 
-	"github.com/BurntSushi/toml"
+	"github.com/demyforge/utils/conf/toml"
 )
 
 type Config struct {
@@ -18,12 +18,7 @@ type Config struct {
 }
 
 func Load(configPath string) (*Config, error) {
-	var conf Config
-	if _, err := toml.DecodeFile(configPath, &conf); err != nil {
-		return nil, fmt.Errorf("failed to parse config file: %s, error: %v", configPath, err)
-	}
-
-	return &conf, nil
+	return toml.Load[Config](configPath)
 }
 
 func (c *Config) DSN() string {
